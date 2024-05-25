@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="todolist.css">
+    <script src="https://kit.fontawesome.com/54ce5a95f1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="todo-container">
+        <div class="image-container">
+            <img src="/images/image copy.png" alt="">
+        </div>
+        <h1>Todo List</h1>
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Add a new task">
+            <button type="submit">Add</button>
+        </form>
+        <ul id="todo-list"></ul>
+    </div>
+    <div class="completed-container">
+        <div class="image-container2">
+            <img src="/images/image copy 5.png" alt="">
+        </div>
+        <h2>Completed Tasks</h2>
+        <ul id="completed-list"></ul>
+    </div>
+
+    <div id="edit-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <form id="edit-form">
+                <input type="text" id="edit-input">
+                <button type="button" id="edit-ok">OK</button>
+                <button type="button" id="edit-cancel">Cancel</button>
+            </form>
+        </div>
+    </div> 
+    <script src="todolist.js"></script>
+</body>
+</html>

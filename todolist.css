@@ -1,0 +1,240 @@
+:root {
+    --bg: #fff;
+    --buttonadd: #8FB1D9;
+    --delete: #F2CBD2;
+    --add: #C2DCBF;
+    --edit: #FFF49A;
+    --font: #594630;
+}
+
+* {
+    font-size: 16px;
+}
+
+body {
+    background-image: url(/images/image\ copy\ 3.png);
+    background-repeat: repeat;
+    background-size: 800px auto;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+.image-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    height: 100px;
+}
+
+.image-container2 img {
+    width: 230px;
+    height: auto;
+}
+
+.todo-container, .completed-container {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 0 10px;
+    overflow: hidden;
+    border: 3px solid var(--delete);
+}
+
+.todo-container::before, .completed-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/image.png);
+    background-size: 400px auto;
+    background-repeat: repeat;
+    opacity: 0.60;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--buttonadd);
+    font-size: 48px;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0px 40px;
+}
+
+input[type="text"] {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: var(--buttonadd);
+    color: #fff;
+    border-radius: 100px;
+    margin-left: 20px;
+    width: 25%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0 40px;
+}
+
+li {
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid var(--delete);
+    
+}
+
+li .task-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+
+}
+
+li .task-details .task-info {
+    display: flex;
+    align-items: center;
+    color: var(--buttonadd);
+
+}
+
+li .task-details .task-info span {
+    margin-left: 10px;
+    flex-grow: 1;
+    font-size: 18px;
+
+}
+
+li .task-details .task-actions {
+    display: flex;
+    align-items: center;
+}
+
+li .timestamp {
+    font-size: 0.8em;
+    color: var(--buttonadd);
+    font-weight: 600;
+
+}
+
+li.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+button.edit, button.delete {
+    background-color: transparent; 
+    border: none; 
+    padding: 5px; 
+    color: var(--font); 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+button.edit i{
+    background-color: transparent; 
+    color: #EBD998; 
+    font-size: 20px;
+
+}
+
+button.delete i{
+    background-color: transparent; 
+    color: #F2B8B8; 
+    font-size: 20px;
+
+}
+
+button.edit:hover {
+filter: brightness(80%);
+}
+
+button.delete:hover {
+    filter: brightness(80%);
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
